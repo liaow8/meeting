@@ -7,7 +7,7 @@
     from blueking.component.shortcuts import get_client_by_request
     # 从环境配置获取APP信息，从request获取当前用户信息
     client = get_client_by_request(request)
-    kwargs = {'app_id': 1}
+    kwargs = {'bk_biz_id': 1}
     result = client.cc.get_app_host_list(kwargs)
 
 1.2 get_client_by_user
@@ -16,7 +16,7 @@
     # 从环境配置获取APP信息，从user获取当前用户信息，user为User对象或User中username数据
     user = 'xxx'
     client = get_client_by_user(user)
-    kwargs = {'app_id': 1}
+    kwargs = {'bk_biz_id': 1}
     result = client.cc.get_app_host_list(kwargs)
 
 
@@ -34,5 +34,5 @@
          app_secret=app_secret, 
          common_args=common_args
      )
-     kwargs = {'app_id': 1}
+     kwargs = {'bk_biz_id': 1}
      result = client.cc.get_app_host_list(kwargs)

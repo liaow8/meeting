@@ -14,6 +14,7 @@ celery 任务示例
 周期性任务还需要启动celery调度命令：python  manage.py  celerybeat --settings=settings
 """
 import datetime
+# import time
 
 from celery import task
 from celery.schedules import crontab
@@ -27,6 +28,7 @@ def async_task(x, y):
     """
     定义一个 celery 异步任务
     """
+    # time.sleep(20)  # 休息20秒钟，模拟一下高耗时任务
     logger.error(u"celery 定时任务执行成功，执行结果：{:0>2}:{:0>2}".format(x, y))
     return x + y
 

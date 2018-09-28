@@ -28,6 +28,7 @@ urlpatterns = patterns(
     url(r'^', include('home_application.urls')),
 
     url(r'^iwork/', include('iwork.urls')),
+    url(r'^homework/', include('homework.urls')),
 )
 
 
